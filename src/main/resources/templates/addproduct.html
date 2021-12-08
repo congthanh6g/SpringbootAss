@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate = "~{layout/template}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
+    <!--css-->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+<section layout:fragment="content">
+    <div class = "container">
+        <div class = "row">
+            <div class ="col-6">
+                <h1>Add Product</h1>
+                <form method = "post" th:action="@{/addproduct}" th:object= "${product}">
+                    <div class = "nb-3">
+                        <label for = "name" class = "form-label">Name</label>
+                        <input type = "text" class = "form-control" name ="name" id = "name" th:field ="${product.name}">
+                    </div>
+                    <div class = "nb-3">
+                        <label for = "price" class = "form-label">Price</label>
+                        <input type = "number" class = "form-control" name ="price" id = "price" th:field ="${product.price}">
+                    </div>
+                    <div class = "nb-3">
+                        <label for = "image" class = "form-label">Image</label>
+                        <input type = "text" class = "form-control" name ="quantity" id = "image" th:field ="${product.image}">
+                    </div>
+                    <div class = "nb-3">
+                        <label for = "categoryid" class = "form-label">CategoryID</label>
+                        <input type = "number" class = "form-control" name ="categoryid" id = "categoryid" th:field ="${product.categoryid}">
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <div class = "nb-3">
+                    <button type = "submit" class = "btn btn-primary">Save</button>
+                    </div>
+                </form>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
